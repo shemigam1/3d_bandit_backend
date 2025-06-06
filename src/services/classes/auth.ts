@@ -177,14 +177,14 @@ class Auth {
 		);
 	}
 
-	public async confirmOTP(input: any) {
-		// confirm otp
-	}
+	// public async confirmOTP(input: any) {
+	// 	// confirm otp
+	// }
 
-	public async changePassword(input: any) {
-		// once otp is confirmed
-		// change password
-	}
+	// public async changePassword(input: any) {
+	// 	// once otp is confirmed
+	// 	// change password
+	// }
 }
 
 export default Auth;
