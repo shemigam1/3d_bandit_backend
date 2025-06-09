@@ -15,7 +15,7 @@ apiRouter.use('/3d', fileRouter)
 apiRouter.use('/hello', authMiddleWare, (req: Request, res: Response) => {
 	const data = ResultFunction(
 		true,
-		'Welcome to monitree api v1.0',
+		'Welcome to 3d_bandit api v1.0',
 		200,
 		ReturnStatus.OK,
 		null
