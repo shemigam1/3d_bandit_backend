@@ -26,7 +26,7 @@ class File {
             apikey: cloudinaryConfig.api_key
         }
 
-        console.log(cloudinaryConfig);
+        // console.log(cloudinaryConfig);
 
         return ResultFunction(
             true,
