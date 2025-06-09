@@ -2,7 +2,6 @@ import { v2 as cloudinary } from "cloudinary";
 import { cloudinaryConfig } from "../../helpers/config";
 import { ResultFunction } from "../../helpers/utils";
 import { ReturnStatus } from "../../types/generic";
-import { log } from "console";
 import { IFile } from "../../types/file";
 import FileModel from "../../models/file";
 class File {
