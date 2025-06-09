@@ -126,16 +126,5 @@ class Auth {
             return (0, utils_1.ResultFunction)(false, 'check your email', 200, generic_1.ReturnStatus.OK, null);
         });
     }
-    confirmOTP(input) {
-        return __awaiter(this, void 0, void 0, function* () {
-            // confirm otp
-        });
-    }
-    changePassword(input) {
-        return __awaiter(this, void 0, void 0, function* () {
-            // once otp is confirmed
-            // change password
-        });
-    }
 }
 exports.default = Auth;

@@ -19,7 +19,10 @@ const connect_1 = __importDefault(require("./database/connect"));
 const errorHandler_1 = __importDefault(require("./middlewares/errorHandler"));
 const app = (0, express_1.default)();
 const PORT = process.env.PORT || 1738;
-app.use((0, cors_1.default)());
+app.use((0, cors_1.default)({
+// origin: 'https://3dbandit.netlify.app',
+// optionsSuccessStatus: 200,
+}));
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: false }));
 app.use('/api/v1', index_1.default);
