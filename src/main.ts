@@ -9,8 +9,8 @@ const app = express();
 const PORT = process.env.PORT || 1738;
 
 app.use(cors({
-	// origin: 'http://localhost:5173',
-	// optionsSuccessStatus: 200,
+	origin: 'https://3dbandit.netlify.app',
+	optionsSuccessStatus: 200,
 }));
 
 app.use(express.json());
