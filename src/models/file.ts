@@ -10,5 +10,5 @@ const FileSchema: Schema = new Schema<IFile>({
 })
 
 
-const File = mongoose.model<IFile>('File', FileSchema)
-export default File
+const FileModel = mongoose.model<IFile>('File', FileSchema)
+export default FileModel

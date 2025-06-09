@@ -2,6 +2,9 @@ import { v2 as cloudinary } from "cloudinary";
 import { cloudinaryConfig } from "../../helpers/config";
 import { ResultFunction } from "../../helpers/utils";
 import { ReturnStatus } from "../../types/generic";
+import { log } from "console";
+import { IFile } from "../../types/file";
+import FileModel from "../../models/file";
 class File {
     public async upload3dFile() {
         const timestamp = Math.round((new Date).getTime() / 1000);
@@ -20,9 +23,11 @@ class File {
         const signatureData = {
             signature,
             timestamp,
-            cloudname: cloudinaryConfig.cloudName,
-            apikey: cloudinaryConfig.apiKey
+            cloudname: cloudinaryConfig.cloud_name,
+            apikey: cloudinaryConfig.api_key
         }
+
+        console.log(cloudinaryConfig);
 
         return ResultFunction(
             true,
@@ -32,6 +37,30 @@ class File {
             signatureData
         )
     }
+
+    public async createFile(input: IFile) {
+        const { name, fileUrl, owner, createdAt } = input;
+
+        try {
+            const newFile = FileModel.create({ name, fileUrl, owner, createdAt });
+            return ResultFunction(
+                true,
+                "File created successfully",
+                200,
+                ReturnStatus.OK,
+                newFile
+            );
+        } catch (error) {
+            return ResultFunction(
+                false,
+                "Something went wrong",
+                500,
+                ReturnStatus.BAD_REQUEST,
+                null);
+        }
+    }
+
+    public async getFiles() { }
 }
 
 export default File;

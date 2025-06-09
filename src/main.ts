@@ -8,7 +8,10 @@ import errorHandler from './middlewares/errorHandler';
 const app = express();
 const PORT = process.env.PORT || 1738;
 
-app.use(cors());
+app.use(cors({
+	origin: 'http://localhost:5173',
+	optionsSuccessStatus: 200,
+}));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
