@@ -5,6 +5,7 @@ export interface ILogin {
 
 export type LoginData = {
 	user: {
+		id: string;
 		email: string;
 		// name: string;
 	};
@@ -20,6 +21,7 @@ export interface ISignup {
 export type SignupData = {
 	user: {
 		// name: string,
+		// id: string;
 		email: string;
 		password: string;
 	};

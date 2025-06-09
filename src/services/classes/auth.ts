@@ -40,6 +40,7 @@ class Auth {
 				const data: LoginData = {
 					token: jwtToken,
 					user: {
+						id: user._id.toString(),
 						email,
 						// name: user.name,
 					},
@@ -79,12 +80,13 @@ class Auth {
 
 	public async signup(input: ISignup) {
 		try {
-			console.log('entered signup service');
+			// console.log('entered signup service');
 
 			const { email, password } = input;
 			const data: SignupData = {
 				user: {
 					// name,
+					// id: "",
 					email,
 					password,
 				},
@@ -111,10 +113,20 @@ class Auth {
 					// console.log(newUser);
 
 					const { password, ...other } = newUser;
+					// other.id = other._id.toString();
 					// console.log(other);
 					// console.log(password);
 
 					// data.user = other
+					const jwtToken = signJwt(newUser);
+
+					const userData = {
+						token: jwtToken,
+						user: {
+							id: other._id.toString(),
+							email,
+						},
+					}
 					return ResultFunction(
 						true,
 						'signup successful',

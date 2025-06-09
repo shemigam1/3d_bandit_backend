@@ -10,6 +10,7 @@ const PORT = process.env.PORT || 1738;
 
 app.use(cors({
 	// origin: 'https://3dbandit.netlify.app',
+	// origin: 'http://localhost:5173',
 	// optionsSuccessStatus: 200,
 }));
 

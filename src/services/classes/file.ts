@@ -42,6 +42,8 @@ class File {
 
         try {
             const newFile = FileModel.create({ name, fileUrl, owner, createdAt });
+            // console.log(newFile);
+
             return ResultFunction(
                 true,
                 "File created successfully",
