@@ -132,7 +132,7 @@ class Auth {
 						'signup successful',
 						200,
 						ReturnStatus.OK,
-						other
+						userData
 					);
 				} catch (error) {
 					console.log(error);
